@@ -2,7 +2,7 @@
 
 // Route Init
 // Via https://bitbucket.org/JREAM/route/src/0271c7dce7606abec29f3ba9909bacbcdd2a20fb?at=master
-include("route.php");
+include("libs/route.php");
 $route = new Route();
 // Close Route Init
 
@@ -13,7 +13,7 @@ $route->add('/', function() {
 
 // Test Suite Paths
 $route->add('/name', function() {
-	echo "name;"
+	echo "name";
 });
 
 $route->add('/name/.+', function($name) {
