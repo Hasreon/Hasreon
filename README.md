@@ -1,4 +1,6 @@
-heroku-php-boilerplate
+Hasreon
 ======================
 
-Does what it says on the tin.
+The MUD/RPG thingy. Written in PHP.
+
+[![Build Status](https://travis-ci.org/picoknow/Hasreon.svg?branch=master)](https://travis-ci.org/picoknow/Hasreon)
