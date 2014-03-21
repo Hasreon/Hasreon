@@ -19,12 +19,10 @@ env:
   - DB=mysql
 
 # execute any number of scripts before the test run, custom env's are available as variables
-before_script:
-  - echo "Before"
+before_script: ./scripts/before-test.sh
 # omitting "script:" will default to phpunit
 # use the $DB env variable to determine the phpunit.xml to use
-script:
-  - echo "During"
+script: ./scripts/test.sh
 
 # configure notifications (email, IRC, campfire etc)
 notifications:
