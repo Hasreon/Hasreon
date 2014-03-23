@@ -1,5 +1,5 @@
 <?php
-/**
+/** At https://bitbucket.org/JREAM/route
  * @author		Jesse Boyer <contact@jream.com>
  * @copyright	Copyright (C), 2011-12 Jesse Boyer
  * @license		GNU General Public License 3 (http://www.gnu.org/licenses/)
@@ -46,7 +46,9 @@ class Route
 	public function submit()
 	{	
 		//$geturi=$_REQUEST['uri'];
-		$geturi=$_SERVER['REQUEST_URI'];
+		//$geturi=$_SERVER['REQUEST_URI'];
+		$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+		$geturi = $uri_parts[0];
 		$uri = isset($geturi) ? $geturi : '/';
 		$uri = trim($uri, $this->_trim);
 
