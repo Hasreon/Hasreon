@@ -12,8 +12,15 @@ $route->add('/', function() {
 });
 
 // Test Suite Paths
-$route->add('/name', function() {
-	echo "name";
+$route->add('/api', function() {
+	require "parts/api-v1.php";/*
+	switch($_REQUEST["mode"]){
+		case "test":
+			echo "good";
+			break;
+		default:
+			echo "No recognised mode requested.";
+	}*/
 });
 
 $route->add('/name/.+', function($name) {
