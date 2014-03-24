@@ -47,8 +47,11 @@ class Route
 	{	
 		//$geturi=$_REQUEST['uri'];
 		//$geturi=$_SERVER['REQUEST_URI'];
-		$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+		/*
+		 * $uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
 		$geturi = $uri_parts[0];
+        */
+        $geturi=$_SERVER["QUERY_STRING"];
 		$uri = isset($geturi) ? $geturi : '/';
 		$uri = trim($uri, $this->_trim);
 

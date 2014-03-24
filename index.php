@@ -2,7 +2,7 @@
 
 // Route Init
 // Via https://bitbucket.org/JREAM/route/src/0271c7dce7606abec29f3ba9909bacbcdd2a20fb?at=master
-include("libs/route.php");
+include("core/libs/route.php");
 $route = new Route();
 // Close Route Init
 
@@ -13,7 +13,7 @@ $route->add('/', function() {
 
 // Test Suite Paths
 $route->add('/api', function() {
-	require "parts/api-v1.php";/*
+	require "core/parts/api-v1.php";/*
 	switch($_REQUEST["mode"]){
 		case "test":
 			echo "good";
