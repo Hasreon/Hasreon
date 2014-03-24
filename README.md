@@ -11,4 +11,4 @@ The MUD/RPG thingy. Written in PHP.
 
 - This is the server repo.
 - The client repo is at [Hasreon/Hasreon-client](https://github.com/Hasreon/Hasreon-client).
-- This is at a very early stage in devlopment.
+- This is at a very early stage in development.
