@@ -24,7 +24,7 @@
         		dataDiv = document.getElementById('returnedData');
         		function sendData(data) {}
         			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Akash',function(data){
-        			dataDiv = data;
+        			dataDiv.innerHTML = data;
         		},'text','get');
         		
         		
