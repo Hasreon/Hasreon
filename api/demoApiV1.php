@@ -2,8 +2,8 @@
 // This is the server-side script
  
 // Set the content type
-header('Content-Type: text/plain');
+header('Content-Type: text/html');
  
 // Send the data back
-echo "This is the returned text.";
+echo "<h2><b>This</b> is the returned text.</h2>";
 ?>
