@@ -29,7 +29,7 @@
 			    if(xhr.readyState === 4){
 			        // 200 is a successful return
 			        if(xhr.status === 200){
-			            alert(xhr.responseText); // 'This is the returned text.'
+			            document.write(xhr.responseText); // 'This is the returned text.'
 			        }else{
 			            alert('Error: '+xhr.status); // An error occurred during the request
 			        }
