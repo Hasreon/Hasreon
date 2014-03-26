@@ -17,11 +17,17 @@
 	</head>
 	<body>
         	<script>
+        		function prepReq() {
+        			var param = "?name=" + data.value;
+        			sendData(param);
+        		}
+        		dataDiv = document.getElementById('returnedData');
+        		function sendData(data) {
         		// This is the client-side script
  
 			// Initialize the Ajax request
 			var xhr = new XMLHttpRequest();
-			xhr.open('get', '/api/demoApiV1.php');
+			xhr.open('get', '/api/demoApiV1.php' + data);
 			 
 			// Track the state changes of the request
 			xhr.onreadystatechange = function(){
@@ -29,7 +35,7 @@
 			    if(xhr.readyState === 4){
 			        // 200 is a successful return
 			        if(xhr.status === 200){
-			            document.write(xhr.responseText); // 'This is the returned text.'
+			            dataDiv.innerHTML = xhr.responseText; // 'This is the returned text.'
 			        }else{
 			            alert('Error: '+xhr.status); // An error occurred during the request
 			        }
@@ -38,6 +44,10 @@
 			 
 			// Send the request to send-ajax-data.php
 			xhr.send(null);
+        		}
         	</script>
+        	<div id="returnedData">Send a Request</div>
+        	<input type="text" id="data">
+        	<button onclick="prepReq()">Send Data</button>
     </body>
 </html>
