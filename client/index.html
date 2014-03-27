@@ -17,22 +17,8 @@
 	</head>
 	<body>
         	<script>
-        		function prepReq() {
-        			var param = "?name=" + data.value;
-        			sendData(param);
-        		}
         		dataDiv = document.getElementById('returnedData');
-        		function sendData(data) {}
-        			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Akash',function(data){
-        			dataDiv.innerHTML = data;
-        		},'text','get');
-        		
-        		
-        		
-	/* 
-	... do what you want with 'data' variable ... 
-	*/
-	},'text','post');
+			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Isaac',function(data){dataDiv.innerHTML = data;},'html','get');
         	</script>
         	<div id="returnedData">Send a Request</div>
         	<input type="text" id="data">
