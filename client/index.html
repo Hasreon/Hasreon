@@ -18,7 +18,7 @@
 	<body>
         	<script>
         		dataDiv = document.getElementById('returnedData');
-			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Isaac',(function(data){dataDiv.innerHTML = data;})(),'html','get');
+			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Isaac',function(data){dataDiv.innerHTML = data;},'text','get');
         	</script>
         	<div id="returnedData">Send a Request</div>
         	<input type="text" id="data">
