@@ -1,4 +1,4 @@
 <?php
 $person = $_GET["name"];
-echo "Hello $person !"
+echo "Hello $person!"
 ?>
