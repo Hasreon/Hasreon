@@ -16,7 +16,7 @@
 		<script src="js/api.js"></script>
 	</head>
 	<body>
-        	<script>
+        	<script>/*
         		function prepReq() {
         			var param = "?name=" + data.value;
         			sendData(param);
@@ -44,6 +44,19 @@
 			 
 			// Send the request to send-ajax-data.php
 			xhr.send(null);
+        		}*/
+        		function doRequest(url){
+        			var x;
+        			jx.load(url,function(y){
+								x = y;
+							},'text','get');
+							return(x);
+        		}
+        		function prepReq(){
+        			dataDiv = document.getElementById('returnedData');
+        			var input = data.value;
+        			var z = "/api/demoApiV1.php?name="+input;
+        			dataDiv = doRequest(z);
         		}
         	</script>
         	<div id="returnedData">Send a Request</div>
