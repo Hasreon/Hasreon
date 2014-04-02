@@ -45,17 +45,18 @@
 			// Send the request to send-ajax-data.php
 			xhr.send(null);
         		}*/
+        		var x;
         		function doRequest(url){
-        			var x;
+        			
         			jx.load(url,function(y){
 					x = y;
 				},'text','get');
-							return(x);
+				return(x);
         		}
         		function prepReq(){
         			dataDiv = document.getElementById('returnedData');
         			var input = data.value;
-        			var z = "/api/demoApiV1.php?name="+input;
+        			var z = "http://hasreon.herokuapp.com/api/demoApiV1.php?name="+input;
         			dataDiv.innerHTML = doRequest(z);
         		}
         	</script>
