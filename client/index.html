@@ -56,7 +56,7 @@
         			dataDiv = document.getElementById('returnedData');
         			var input = data.value;
         			var z = "/api/demoApiV1.php?name="+input;
-        			dataDiv = doRequest(z);
+        			dataDiv.innerHTML = doRequest(z);
         		}
         	</script>
         	<div id="returnedData">Send a Request</div>
