@@ -48,9 +48,10 @@
         		var x;
         		var url;
 			var input; 
-			var dataDiv = document.getElementById('returnedData');
+			var dataDiv;
         		function sendRequest(){
         			input = data.value;
+        			dataDiv = document.getElementById('returnedData');
         			url = "http://hasreon.herokuapp.com/api/demoApiV1.php?name="+input;
         			jx.load(url,function(returnedData){dataDiv.innerHTML = returnedData;},'text','get');
         		};
