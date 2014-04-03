@@ -1,7 +1,7 @@
 <?php
 header('Content-type: text/plain');
-if(isset($_GET["name"]) {
-    $person = $_GET["name"]; 
+$person = $_GET["name"]; 
+if($person !== '') {
     echo "Hello $person!";
 } else {
     echo "Send a Request!"
