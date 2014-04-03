@@ -46,20 +46,17 @@
 			xhr.send(null);
         		}*/
         		var x;
-        		function doRequest(url){
-        			
-        			jx.load(url,function(y){
-					x = y;
-				},'text','get');
-				return(x);
-        		}
-        		function prepReq(){
-        			dataDiv = document.getElementById('returnedData');
-        			var input = data.value;
-        			var z = "http://hasreon.herokuapp.com/api/demoApiV1.php?name="+input;
-        			dataDiv.innerHTML = doRequest(z);
+        		var url;
+			var input; 
+			var dataDiv = document.getElementById('returnedData');
+        		function sendRequest(){
+        			input = data.value;
+        			url = "http://hasreon.herokuapp.com/api/demoApiV1.php?name="+input;
+        			jx.load(url,function(returnedData){dataDiv.innerHTML = returnedData;},'text','get');
         		};
-        		prepReq()
+        		sendRequest()
+        		
+        		
         	</script>
         	<div id="returnedData">Send a Request</div>
         	<input type="text" id="data">
