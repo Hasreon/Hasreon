@@ -15,13 +15,52 @@
 		<!-- JS-CODE -->
 		<script src="js/api.js"></script>
 	</head>
-	<body>
-        	<script>
+	<body> 
+        	<script>/*
+        		function prepReq() {
+        			var param = "?name=" + data.value;
+        			sendData(param);
+        		}
         		dataDiv = document.getElementById('returnedData');
-			jx.load('http://hasreon.herokuapp.com/api/demoApiV1.php?name=Isaac',function(data){dataDiv.innerHTML = data;},'text','get');
+        		function sendData(data) {
+        		// This is the client-side script
+ 
+			// Initialize the Ajax request
+			var xhr = new XMLHttpRequest();
+			xhr.open('get', '/api/demoApiV1.php' + data);
+			 
+			// Track the state changes of the request
+			xhr.onreadystatechange = function(){
+			    // Ready state 4 means the request is done
+			    if(xhr.readyState === 4){
+			        // 200 is a successful return
+			        if(xhr.status === 200){
+			            dataDiv.innerHTML = xhr.responseText; // 'This is the returned text.'
+			        }else{
+			            alert('Error: '+xhr.status); // An error occurred during the request
+			        }
+			    }
+			}
+			 
+			// Send the request to send-ajax-data.php
+			xhr.send(null);
+        		}*/
+        		var x;
+        		var url;
+			var input; 
+			var dataDiv;
+        		function sendRequest(){
+        			input = data.value;
+        			dataDiv = document.getElementById('returnedData');
+        			url = "http://hasreon.herokuapp.com/api/demoApiV1.php?name="+input;
+        			jx.load(url,function(returnedData){dataDiv.innerHTML = returnedData;},'text','get');
+        		};
+        		sendRequest()
+        		
+        		
         	</script>
         	<div id="returnedData">Send a Request</div>
         	<input type="text" id="data">
-        	<a href="javascript:prepReq()"><button>Send Data</button></a>
+        	<a href="javascript:sendRequest()"><button>Send Data</button></a>
     </body>
 </html>
