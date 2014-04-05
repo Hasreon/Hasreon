@@ -1,43 +1,28 @@
-<?php
-
-// Route Init
-// Via https://bitbucket.org/JREAM/route/src/0271c7dce7606abec29f3ba9909bacbcdd2a20fb?at=master
-include("core/libs/route.php");
-$route = new Route();
-// Close Route Init
-
-//Add Root path
-$route->add('/', function() {
-	echo "Home!";
-});
-
-// Test Suite Paths
-$route->add('/api', function() {
-	require "core/parts/api-v1.php";/*
-	switch($_REQUEST["mode"]){
-		case "test":
-			echo "good";
-			break;
-		default:
-			echo "No recognised mode requested.";
-	}*/
-});
-
-$route->add('/name/.+', function($name) {
-	echo "Hello $name";
-});
-
-
-// Start Static Server (INSECURE--Uncomment at your peril)
-/*
-$route->add('/static/.+', function($fname) {
-	$type = mime_content_type("static/".$fname);
-	header('Content-type: $type');
-	echo file_get_contents("static/".$fname);
-});
-*/
-// End Static Server
-
-// And...Run
-$route->submit();
-// And...Ran
+<html>
+    <head>
+        <title>Hasreon</title>
+        <link rel="stylesheet" type="text/css" href="/assets/css/base.css" />
+    </head>
+    <body>
+        <div class="clear">
+          <div class="col col-8 tablet-col-9 mobile-col-1-2">
+            <h1>Hasreon</h1>
+          </div>
+          <div class="col col-4 tablet-col-3 mobile-col-1-2">
+            <?php
+                if($_GET['r']==$_ENV["INV"]){
+            ?>
+              <p>Goto <a href="/client/">client</a>?</p>
+            <?php
+                }else{
+            ?>
+              <p></p>
+            <?php        
+                }
+            ?>
+          </div>
+          <div class="col col-4 tablet-col-4 mobile-full">
+            <a href="http://bit.ly/hasreon">Github</a>                            <div class="col col-8 tablet-col-3 mobil  full                 <p>Hasreon is an open-source RPG/MUD game, on Github.</p>           </div>
+        </div>
+    </body>
+</html>
