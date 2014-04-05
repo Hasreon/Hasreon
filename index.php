@@ -21,6 +21,8 @@
                 }
             ?>
           </div>
+        </div>
+        <div class="clear">
           <div class="col col-4 tablet-col-4 mobile-full">
             <a href="http://bit.ly/hasreon">Github</a>
           </div>
