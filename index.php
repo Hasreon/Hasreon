@@ -22,7 +22,11 @@
             ?>
           </div>
           <div class="col col-4 tablet-col-4 mobile-full">
-            <a href="http://bit.ly/hasreon">Github</a>                            <div class="col col-8 tablet-col-3 mobil  full                 <p>Hasreon is an open-source RPG/MUD game, on Github.</p>           </div>
+            <a href="http://bit.ly/hasreon">Github</a>
+          </div>
+          <div class="col col-8 tablet-col-3 mobile-full">
+            <p>Hasreon is an open-source RPG/MUD game, on Github.</p>
+          </div>
         </div>
     </body>
 </html>
