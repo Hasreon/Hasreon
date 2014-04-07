@@ -4,37 +4,48 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/base.css" />
     </head>
     <body>
-     <div class="header dark-blue-row">
-      <div class="container row-4 tablet-row-3 mobile-row-            <div class="clear mobile-center       
-          <a href="/base/" cBlass="logo left mobile-no-float uppercase">Hasreon</a>           <ul class="navigation inline-list ri                            <li><a class="active" href="/        li>
-                <li><a href="/client   Client</li>
-   
-              <li><a href="http://bit.ly/hasreon">Github</a></li>   </            </div>
-          </div>
-          <d        ntainer mobile-containe                 <div class="banner clear">
-              <div class="left col-5 tablet-col-10 tablet-container tablet-center-tex            bile-container mobile-center-text">
-                  <h1 class="h3">A work in progress MUD/RPG game.>
-                     "thin row tablet-col-9 tablet-container">
-                  Open-Sourced and readily-deployable, see it on Github.     </p>
-                <div class="buttons row clear">
-                  <a href="https://github.com/matthewhartman/base/zipball/              ton green-button tablet-col-1-3 mobile-full">Download</a>
-                            /do          tto          -3 mobile-full">View Docs</a>
-                <                              div    device right tablet-full mobile-full">
-              </div>
-            </div>
-          </div>
-        </div>
-<?php
-                if($_GET['r']==$_ENV["INV"]){
-            ?>
-              <p>Goto <a href="/client/">client</a>?</p>
-            <?php
-                }else{
-            ?>
-              <p></p>
-            <?php        
-                }
-            ?>
+<div class="header dark-blue-row">
+  <div class="container row-4 tablet-row-3 mobile-row-3">
+    <div class="clear mobile-center-text">
+      <a href="/" class="left mobile-no-float uppercase">{{site.title}}</a>
+      <ul class="navigation inline-list right no-mobile">
+        <li><a class="active" href="/">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container introduction-block clear thin">
+    <h1>{{page.title}}</h1>
+    <?php
+    $reqInv=$_GET['r'];
+    $truInv=$_ENV["INV"];
+    if($reqInv==$truInv){
+    ?>
+    <p>Goto <a href="/client/">client</a>?</p>
+    <?php
+    }else{
+    ?>
+    <p></p>
+    <?php        
+    }
+    ?>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container clear">
+    <div class="left col-6 left-text mobile-full mobile-left-text">
+      A simple site..
+    </div>
+    <div class="right col-6 right-text mobile-full mobile-left-text">
+      <ul class="inline-list footer-list">
+      <li><a href="/base/docs/">Docs</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
        <!--<div class="clear">
           <div class="col col-8 tablet-col-9 mobile-col-1-2">
             <h1>Hasreon</h1>
