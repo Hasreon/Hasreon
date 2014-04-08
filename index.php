@@ -1,9 +1,10 @@
 <html>
     <head>
         <title>Hasreon</title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/base.css" />
+        <!--<link rel="stylesheet" type="text/css" href="/assets/css/base.css" />-->
     </head>
     <body>
+    <!--
 <div class="header dark-blue-row">
   <div class="container row-4 tablet-row-3 mobile-row-3">
     <div class="clear mobile-center-text">
@@ -45,6 +46,8 @@
       </ul>
     </div>
   </div>
-</div>
+</div>-->
+
+
     </body>
 </html>
