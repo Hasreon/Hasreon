@@ -8,10 +8,7 @@ The MUD/RPG thingy. Written in PHP, HTML, JS, CSS. Hosted on [Heroku](http://her
 ## Notes
 
 - This is the server _and_ client repo.
-- The client code is inside the client folder.
+- The client code is inside the `client` folder.
 - Thinking of contributing? See `CONTRIBUTING.md`.
 - The Trello Board is [here](https://trello.com/b/XKlx3SC1/hasreon).
 - 
-
-
-
