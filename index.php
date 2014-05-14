@@ -18,20 +18,7 @@
 
 <div class="row">
   <div class="container introduction-block clear thin">
-    <h1>Hi!</h1>
-    <?php
-    $reqInv=$_GET['r'];
-    $truInv=$_ENV["INV"];
-    if($reqInv==$truInv){
-    ?>
-    <p>Goto <a href="/client/">client</a>?</p>
-    <?php
-    }else{
-    ?>
-    <p></p>
-    <?php        
-    }
-    ?>
+
   </div>
 </div>
 
@@ -47,7 +34,20 @@
     </div>
   </div>
 </div>-->
-
+        <h1>Hi!</h1>
+        <?php
+        $reqInv=$_GET['r'];
+        $truInv=$_ENV["INV"];
+        if($reqInv==$truInv){
+        ?>
+        <p>Goto <a href="/client/">client</a>?</p>
+        <?php
+        }else{
+        ?>
+        <p></p>
+        <?php        
+        }
+        ?>
 
     </body>
 </html>
