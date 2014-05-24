@@ -37,7 +37,7 @@
         <h1>Hi!</h1>
         <?php
         $reqInv=$_GET['r'];
-        $truInv=$_ENV["INVITE_CODE"];
+        $truInv=$_ENV["INVITE_CODE"]; // Set via heroku website
         if($reqInv==$truInv){
         ?>
         <p>Goto <a href="/client/">client</a>?</p>
