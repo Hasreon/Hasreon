@@ -37,7 +37,7 @@
         <h1>Hi!</h1>
         <?php
         $reqInv=$_GET['r'];
-        $truInv=$_ENV["INV"];
+        $truInv=$_ENV["INVITE_CODE"];
         if($reqInv==$truInv){
         ?>
         <p>Goto <a href="/client/">client</a>?</p>
