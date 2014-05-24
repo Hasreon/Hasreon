@@ -44,7 +44,11 @@
         <?php
         }else{
         ?>
-        <p></p>
+        <form action="/" method="get">
+          <label for="r">Referral code</label>
+          <input type="text" name="r"><br>
+          <input type="submit" value="Submit">
+        </form>
         <?php        
         }
         ?>
