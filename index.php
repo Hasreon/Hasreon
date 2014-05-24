@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Hasreon</title>
+        <title>Hasreon - Home</title>
         <!--<link rel="stylesheet" type="text/css" href="/assets/css/base.css" />-->
     </head>
     <body>
