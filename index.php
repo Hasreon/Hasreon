@@ -22,5 +22,7 @@
         <?php        
         }
         ?>
+      <hr />
+      <a href="/session.php">Session manager</a> | <a href="https://github.com/Hasreon/Hasreon">Github</a>
     </body>
 </html>
