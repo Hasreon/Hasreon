@@ -27,11 +27,8 @@
 </head>
 
 <body>
-  <!-- Primary Page Layout
-    ================================================== -->
-  <!-- Delete everything in this .container and get started on your own site! -->
-
   <div class="container">
+    
     <div class="sixteen columns">
       <h1 class="remove-bottom" style="margin-top: 40px">Hasreon</h1>
 
