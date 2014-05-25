@@ -12,7 +12,7 @@
   ================================================== -->
   <meta charset="utf-8">
 
-  <title>Your Page Title Here :)</title>
+  <title>Hasreon</title>
   <meta content="" name="description">
   <meta content="" name="author"><!-- Mobile Specific Metas
   ================================================== -->
