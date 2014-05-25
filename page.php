@@ -37,7 +37,14 @@
     </div>
 
     <div class="sixteeen columns">
-      <?php echo $_GET['id']; ?>
+<?php
+function removeslashes($string)
+{
+    $string=implode("",explode("\\",$string));
+    return stripslashes(trim($string));
+}
+include("pages/".removeslashes($_GET['id'].".php");
+?>
     </div>
 
   </div>
