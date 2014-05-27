@@ -44,6 +44,7 @@ function removeslashes($string)
 }
 $path = "pages/".removeslashes($_SERVER['PATH_INFO']).".php";
 if file_exists($path){
+	echo $path;
 	include($path);
 } else {
 die(include(404.php));
