@@ -36,7 +36,6 @@
       <hr>
     </div>
 
-    <div class="sixteeen columns">
 <?php
 function removeslashes($string)
 {
@@ -46,7 +45,6 @@ function removeslashes($string)
 $path = "pages/".removeslashes($_SERVER['PATH_INFO']).".php";
 include($path);
 ?>
-    </div>
 
   </div>
 </body>
