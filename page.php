@@ -34,8 +34,7 @@ echo file_get_contents("header.html");
 ?>
 
 <?php
-function removeslashes($string)
-{
+function removeslashes($string) {
 	$string = implode("",explode("\\",$string));
 	return stripslashes(trim($string));
 }
