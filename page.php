@@ -43,7 +43,7 @@ function removeslashes($string)
     $string=implode("",explode("\\",$string));
     return stripslashes(trim($string));
 }
-include("pages/".removeslashes($_GET['id']).".php");
+include("pages/".removeslashes($_SERVER['PATH_INFO']).".php");
 ?>
     </div>
 
