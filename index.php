@@ -28,14 +28,10 @@
 
 <body>
   <div class="container">
-    
-    <div class="sixteen columns">
-      <h1 class="remove-bottom" style="margin-top: 40px">Hasreon</h1>
 
-      <h5>Version 0.5 beta</h5>
-      <hr>
-    </div>
-
+<?php
+echo file_get_contents("header.html");
+?>
     <div class="two-thirds column">
       <?php
 $reqInv=$_GET['r'];
