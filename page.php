@@ -36,7 +36,6 @@
       <hr>
     </div>
 
-    <div class="sixteeen columns">
 <?php
 function removeslashes($string)
 {
@@ -50,7 +49,6 @@ if file_exists($path){
 die(include(404.php));
 }
 ?>
-    </div>
 
   </div>
 </body>
