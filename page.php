@@ -40,7 +40,11 @@ function removeslashes($string)
 	return stripslashes(trim($string));
 }
 $path = "pages/".removeslashes($_SERVER['PATH_INFO']).".php";
-include($path);
+if (file_exists($path)) {
+	include($path);
+} else {
+	echo "The page requested does not exist";
+}
 ?>
 
   </div>
