@@ -40,10 +40,15 @@
 <?php
 function removeslashes($string)
 {
-    $string=implode("",explode("\\",$string));
-    return stripslashes(trim($string));
+	$string=implode("",explode("\\",$string));
+	return stripslashes(trim($string));
 }
-include("pages/".removeslashes($_SERVER['PATH_INFO']).".php");
+$path = "pages/".removeslashes($_SERVER['PATH_INFO']).".php";
+if file_exists($path){
+	include($path);
+} else {
+die(include(404.php));
+}
 ?>
     </div>
 
