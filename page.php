@@ -19,9 +19,9 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1" name=
   "viewport"><!-- CSS
   ================================================== -->
-  <link href="assets/css/skeleton/base.css" rel="stylesheet">
-  <link href="assets/css/skeleton/skeleton.css" rel="stylesheet">
-  <link href="assets/css/skeleton/layout.css" rel="stylesheet"><!--[if lt IE 9]>
+  <link href="/assets/css/skeleton/base.css" rel="stylesheet">
+  <link href="/assets/css/skeleton/skeleton.css" rel="stylesheet">
+  <link href="/assets/css/skeleton/layout.css" rel="stylesheet"><!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
