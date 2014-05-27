@@ -1,4 +1,4 @@
-<html><body>
+<div class="sixteen columns">
 <?php
 if($_REQUEST["is"]=="insane"){
 ?>
@@ -12,4 +12,4 @@ Fancy a <a href="?is=insane">forum</a>?
 <?php
 }
 ?>
-</body></html>
+</div>
