@@ -1,0 +1,16 @@
+      #####  
+       ###    
+       _#__________  
+       |#|--------|
+       | /\ /\ /\ |
+       | \/ \/ \/ |
+       |          |
+       | /\ /\ /\ |
+       | \/ \/ \/ |
+       | ___      |
+       |_|#|______|
+
+You are at the front of the fortress, a partially open door stands            
+ahead of you. There is no means of going back, as the bridge                
+behind you is disintegrating. You can only go forward, into this
+large, stone, structure.
