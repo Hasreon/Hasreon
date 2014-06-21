@@ -1,38 +1,28 @@
 <html>
-  <head>
-     <script src=http://cdn.pubnub.com/pubnub.min.js ></script>
+   <body>
+      <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+       <div id="chatlog"></div>
+     <button onclick="send()">Send Something</button>
      <script>
-     var x = document.getElementById("chat").innerHtml;
-     function append(z){
-      x = x+"<br />"+z;
-     }
-     (function(){
-      
-         var pubnub = PUBNUB.init({
+       var pubnub = PUBNUB.init({
              publish_key   : 'pub-c-5e1c0e3e-0985-4a31-b779-3d0d7df5266a',
              subscribe_key : 'sub-c-f93297f0-f93f-11e3-a762-02ee2ddab7fe'
-         })
-     
-         pubnub.subscribe({
-             channel : "hasreon_chat",
-             message : function(m){ append(m) },
-             connect : publish
-         })
-     
-         function publish() {
-         var message = prompt("Chat");
-             pubnub.publish({
-                 channel : "hasreon_chat",
-                 message : message
-             })
-         }
-    })();
-    </script>
-    </head>
-    <body>
-    <div id="chat"></div>
-    <a href="javascript:publish()">
-      Chat?
-    </a>
-    </body>
+        })
+        var x = document.getElementById("chatlog");
+        pubnub.subscribe({
+            channel: 'hasreon_chat',
+            message: function(m){x.innerHTML=x.innerHTML + "<br />" + m}
+         });
+        var msg;
+        function send() {
+          msg = window.prompt("Enter Your Message");
+           pubnub.publish({
+            channel: 'hasreon_chat',
+            message: msg
+         });
+        }
+        
+
+     </script>
+   </body>
 </html>
