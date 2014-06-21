@@ -1,10 +1,10 @@
 <?php
 $path = $_SERVER['PATH_INFO'];
 switch($path){
-	case "move":
+	case "/move":
 		echo "i equals 0";
 		break;
-	case "description":
+	case "/description":
 		echo "i equals 1";
 		break;
 	default:
