@@ -91,7 +91,7 @@
         var strng;
         function send() {
           msg = txtArea.value;
-          strng = "<" + usernm + "> " + msg;
+          strng = "\<" + usernm + "\> " + msg;
            pubnub.publish({
             channel: 'hasreon_chat',
             message: strng
