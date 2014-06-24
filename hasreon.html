@@ -1,0 +1,67 @@
+<html>
+  <body>
+    <style>
+      body {
+        background-color:#000;
+        font-family:courier;
+        color:#00ff00;
+      }
+      h3 {
+        margin:5px;
+      }
+      #Header {
+        height:6%;
+        width:100%;
+        margin:0;
+        position:fixed;
+        left:0px;
+        right:0px;
+        top:0px;
+      }
+      #Log {
+        position:fixed;
+        left:0px;
+        right:30%;
+        top:6.5%;
+        margin:0;
+        border: 1px solid #00ff00;
+        height:88%;
+        overflow:auto;
+      }
+      #Input {
+        position:fixed;
+        left:0px;
+        right:30%;
+        bottom:0px;
+        height:4%;
+        width:100%;
+      }
+      #chat{
+        border: 1px solid #0f0;
+        position:fixed;
+        right:0px;
+        top:6.5%;
+        height:88%;
+        width:29.8%;
+        background-color:#000;
+        color:#0f0;
+        text-align:right;
+      }
+      #txtArea {
+        width:90%;
+        height:4%;
+        margin:0px;
+        bottom:0px;
+        left:0px;
+        right:10%;
+      }
+    </style>
+    <div id="Header"><center><h3><em><strong>Hasreon - BETA</strong></em></h3></center></div>
+    <div id="Log">Welcome To The Kingdom Of Hasreon</div>
+    <div id="chat">Hello World!</div>
+    <div id="Input">
+      <textarea id="txtArea">Enter a command</textarea>
+      <button onclick="send()" id="sndBtn">Send</button>
+    </div>
+  </body>
+</html>
