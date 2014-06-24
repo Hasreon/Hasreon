@@ -1,4 +1,5 @@
 {
+  "name": "Fairfalcon Gate",
   "North": False,
   "South": False,
   "East": "fairfalconmainstreet",
