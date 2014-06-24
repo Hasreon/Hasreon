@@ -1,0 +1,9 @@
+{
+  "North": False,
+  "South": False,
+  "East": "fairfalcongate",
+  "West": False,
+  "Description": "The Main street of Fairfalcon is quite small, but the sound it makes is deafening. The merchants are shouting, people are talking, musicians are playing, and the birds are singing. The gate is too the east.",
+  "Buildings": ["fairfalconstreetnorth","fairfalconstreetsouth","fairfalconinn","fairfalcongrocers","fairfalconblacksmith","fairfalcontownpolicestation","fairfalcontownhall"],
+  
+}
