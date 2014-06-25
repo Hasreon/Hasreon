@@ -1,0 +1,9 @@
+{
+  "name": "Fairfalcon Inn",
+  "North": False,
+  "South": False,
+  "East": "fairfalconmainstreet",
+  "West": False,
+  "Description": "The inn is warm and cozy. No time to rest though! There are workers cleaning the inn. You can hear the Main street outside, to the east.",
+  "Buildings": [],
+}
