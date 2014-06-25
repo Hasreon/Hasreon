@@ -1,0 +1,9 @@
+{
+  "name": "Fairfalcon Town Hall",
+  "North": False,
+  "South": False,
+  "East": False,
+  "West": "fairfalconmainstreet",
+  "Description": "The Town hall is a quiet building, and it stand tall, almost as high as the gate. It is furnished with expensive wooden furniture and floors. Chandeliers can be seen illuminating the hallways.",
+  "Buildings": ["Fairfalcon Mayor"],
+}
