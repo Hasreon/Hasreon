@@ -21,10 +21,10 @@
   <!--<![endif]-->
 
   <!--[if lte IE 8]>
-      <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+      <link rel="stylesheet" href="/marketing-old-ie.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-      <link rel="stylesheet" href="css/layouts/marketing.css">
+      <link rel="stylesheet" href="/marketing.css">
   <!--<![endif]-->
   
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
