@@ -1,0 +1,9 @@
+{
+  "name": "Fairfalcon Grocers",
+  "North": False,
+  "South": False,
+  "East": "fairfalconmainstreet",
+  "West": False,
+  "Description": "The grocers shop is lively with customers haggling for the best prices. Brightly coloured fruit lines the counter. The exit is to the east.",
+  "Buildings": ["Grocer"],
+}
