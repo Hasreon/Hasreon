@@ -85,7 +85,7 @@
         var x = document.getElementById("chat");
         pubnub.subscribe({
             channel: 'hasreon_chat',
-            message: function(m){x.innerHTML=x.innerHTML + "<br />" + m}
+            message: function(m){ x.innerHTML= m + "<br />" + x.innerHTML}
          });
         var msg;
         var strng;
