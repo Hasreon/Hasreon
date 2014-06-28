@@ -77,28 +77,36 @@
     
           
      <script>
-       var usernm = prompt("Enter your Username");
-       var pubnub = PUBNUB.init({
-             publish_key   : 'pub-c-5e1c0e3e-0985-4a31-b779-3d0d7df5266a',
-             subscribe_key : 'sub-c-f93297f0-f93f-11e3-a762-02ee2ddab7fe'
-        })
-        var x = document.getElementById("chat");
-        x.scrollTop = x.scrollHeight;
-        pubnub.subscribe({
-            channel: 'hasreon_chat',
-            message: function(m){ x.innerHTML= x.innerHTML + "<br />" + m }
-         });
-        var msg;
-        var strng;
-        function send() {
+      var pubnub = PUBNUB.init({
+          publish_key: 'pub-c-5e1c0e3e-0985-4a31-b779-3d0d7df5266a',
+          subscribe_key: 'sub-c-f93297f0-f93f-11e3-a762-02ee2ddab7fe'
+      })
+      var usernm = prompt("Enter your Username");
+      pubnub.publish({
+          channel: 'hasreon_chat',
+          message: usrnm + "has joined the game"
+      });
+      
+      var x = document.getElementById("chat");
+      x.scrollTop = x.scrollHeight;
+      pubnub.subscribe({
+          channel: 'hasreon_chat',
+          message: function (m) {
+              x.innerHTML = x.innerHTML + "<br />" + m
+          }
+      });
+      var msg;
+      var strng;
+      
+      function send() {
           msg = txtArea.value;
           strng = "&lt;" + usernm + "&gt;&nbsp;" + msg;
-           pubnub.publish({
-            channel: 'hasreon_chat',
-            message: strng
-         });
-        }
-     </script>
+          pubnub.publish({
+              channel: 'hasreon_chat',
+              message: strng
+          });
+      }
+           </script>
      <!--End Pubnub Chat Code-->
   </body>
 </html>
