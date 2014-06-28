@@ -97,14 +97,29 @@
       });
       var msg;
       var strng;
-      
+      var slash;
       function send() {
           msg = txtArea.value;
-          strng = "&lt;" + usernm + "&gt;&nbsp;" + msg;
-          pubnub.publish({
+          slash = msg.charAt(0);
+          if(slash != "/") {
+            strng = "&lt;" + usernm + "&gt;&nbsp;" + msg;
+            pubnub.publish({
               channel: 'hasreon_chat',
               message: strng
-          });
+            });
+          }
+          else {
+          	pubnub.publish({
+              channel: 'hasreon_send',
+              message: strng
+            });
+          }
+          pubnub.subscribe({
+	          channel: 'hasreon_chat',
+	          message: function (g) {
+	              window.alert(g);
+	          }
+    			});
       }
            </script>
      <!--End Pubnub Chat Code-->
