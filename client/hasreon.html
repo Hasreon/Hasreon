@@ -84,7 +84,7 @@
       var usernm = prompt("Enter your Username");
       pubnub.publish({
           channel: 'hasreon_chat',
-          message: usrnm + "has joined the game"
+          message: usernm + "has joined the game"
       });
       
       var x = document.getElementById("chat");
@@ -119,7 +119,7 @@
 	          message: function (g) {
 	              window.alert(g);
 	          }
-    			});
+    	  });
       }
            </script>
      <!--End Pubnub Chat Code-->
