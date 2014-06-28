@@ -83,9 +83,10 @@
              subscribe_key : 'sub-c-f93297f0-f93f-11e3-a762-02ee2ddab7fe'
         })
         var x = document.getElementById("chat");
+        x.scrollTop = x.scrollHeight;
         pubnub.subscribe({
             channel: 'hasreon_chat',
-            message: function(m){ x.innerHTML= m + "<br />" + x.innerHTML}
+            message: function(m){ x.innerHTML= x.innerHTML + "<br />" + m }
          });
         var msg;
         var strng;
