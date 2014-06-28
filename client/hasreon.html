@@ -110,12 +110,12 @@
           }
           else {
           	pubnub.publish({
-              channel: 'hasreon_send',
+              channel: 'hasreon-send',
               message: strng
             });
           }
           pubnub.subscribe({
-	          channel: 'hasreon_chat',
+	          channel: 'hasreon-recv',
 	          message: function (g) {
 	              window.alert(g);
 	          }
