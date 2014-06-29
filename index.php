@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive product landing page.">
 
-    <title>Landing Page &ndash; Layout Examples &ndash; Pure</title>
+    <title>Hasreon</title>
 
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
@@ -35,24 +35,24 @@
     
     <div class="header">
         <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="">Your Site</a>
+            <a class="pure-menu-heading" href="">Hasreon</a>
     
             <ul>
                 <li class="pure-menu-selected"><a href="#">Home</a></li>
-                <li><a href="#">Tour</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Play!</a></li>
+                <li class="pure-menu-disabled"><a href="#">Sign Up</a></li>
             </ul>
         </div>
     </div>
     
     <div class="splash-container">
         <div class="splash">
-            <h1 class="splash-head">Big Bold Text</h1>
+            <h1 class="splash-head">Are You Ready?</h1>
             <p class="splash-subhead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                This is Hasreon. A Javascript-Based MUD like no other.
             </p>
             <p>
-                <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
+                <a href="http://purecss.io" class="pure-button pure-button-primary">Enter</a>
             </p>
         </div>
     </div>
