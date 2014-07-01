@@ -109,6 +109,7 @@
       }
       
       var MSG;
+      var msg;
       
       function interpret(input) {
       	if(input.charAt(0) == "/") {
@@ -116,8 +117,9 @@
       	} else if(input.charAt(0) == ":") {
       		//game logic
       	} else {
-      		MSG = "&lt;&nbsp;" + usernm + "&gt;&nbsp;" + input;
-      		chatbox.innerHTML = MSG;
+      	  msg = input.split("~");
+      		MSG = "&lt;&nbsp;" + usernm + "&gt;&nbsp;" + msg[0];
+      		chatbox.innerHTML = MSG + chatbox.innerHTML;
       	}
       	
       }
