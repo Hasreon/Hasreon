@@ -6,8 +6,8 @@ switch($_REQUEST["mode"]){
 		echo "good";
 		break;
     case "move":
-        if(player.canMove("up")){
-            player.move("up");
+        if(canMove($_REQUEST['move_direction'],$_REQUEST['current_location'])){
+            respond("success");
         }else{
             respond("Can't move that direction!");
         }
