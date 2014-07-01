@@ -52,7 +52,7 @@
                 This is Hasreon. A Javascript-Based MUD like no other.
             </p>
             <p>
-                <a href="http://purecss.io" class="pure-button pure-button-primary">Enter</a>
+                <a href="/client/" class="pure-button pure-button-primary">Enter</a>
             </p>
         </div>
     </div>
