@@ -1,5 +1,6 @@
 <?php
 $x=$_REQUEST;
+include("api_functions.php");
 switch($x["mode"]){
 	case "test":
 		echo "good";
