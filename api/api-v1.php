@@ -6,7 +6,7 @@ switch($x["mode"]){
 		echo "good";
 		break;
 	case "move":
-		return canMove($x['move_direction'],$x['current_location']);
+		echo canMove($x['move_direction'],$x['current_location']);
 		break;
 	default:
 		echo "No recognised mode requested.";
