@@ -120,6 +120,7 @@
       	  msg = input.split("~");
       		MSG = "&lt;&nbsp;" + usernm + "&gt;&nbsp;" + msg[0];
       		chatbox.innerHTML = MSG + "<br />" +chatbox.innerHTML;
+      		chatbox.scrollTop = chatbox.scrollHeight;
       	}
       	
       }
