@@ -82,44 +82,39 @@
           subscribe_key: 'sub-c-f93297f0-f93f-11e3-a762-02ee2ddab7fe'
       })
       var usernm = prompt("Enter your Username");
+      var chatbox = document.getElementById("chat");
+      var gamelog = document.getElementById("Log");
+      //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
+      
       pubnub.publish({
           channel: 'hasreon_chat',
-          message: usernm + "has joined the game"
+          message: usernm + " has joined the game"
       });
       
-      var x = document.getElementById("chat");
-      x.scrollTop = x.scrollHeight;
+      
       pubnub.subscribe({
           channel: 'hasreon_chat',
           message: function (m) {
-              x.innerHTML = x.innerHTML + "<br />" + m
+              interpret(m)
           }
       });
-      var msg;
-      var strng;
-      var slash;
+
       function send() {
-          msg = txtArea.value;
-          slash = msg.charAt(0);
-          if(slash != "/") {
-            strng = "&lt;" + usernm + "&gt;&nbsp;" + msg;
-            pubnub.publish({
-              channel: 'hasreon_chat',
-              message: strng
-            });
-          }
-          else {
-          	pubnub.publish({
-              channel: 'hasreon-send',
-              message: strng
-            });
-          }
-          pubnub.subscribe({
-	          channel: 'hasreon-recv',
-	          message: function (g) {
-	              window.alert(g);
-	          }
-    	  });
+          
+      }
+      
+      var MSG;
+      
+      function interpret(input) {
+      	if(input.charAt(0) == "/") {
+      		console.log("Request Sent" + input)
+      	} else if(input.charAt(0) == ":") {
+      		//game logic
+      	} else {
+      		MSG = "&lt;&nbsp;" + usernm + "&gt;&nbsp;" + input;
+      		chatbox.innerHTML = MSG;
+      	}
+      	
       }
            </script>
      <!--End Pubnub Chat Code-->
