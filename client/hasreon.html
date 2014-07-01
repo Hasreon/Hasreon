@@ -103,7 +103,8 @@
       function send() {
           pubnub.publish({
              channel: 'hasreon_chat',
-             message: "/" + txtArea.value
+             message: txtArea.value + "~" + usernm
+             //the usernm allows the js to determine if the incoming/outgoing message is for you or not
           });
       }
       
