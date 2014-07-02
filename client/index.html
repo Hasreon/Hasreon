@@ -147,10 +147,8 @@
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
   						$.getJSON("/api/Loc/" + filename + ".json", function (data) {
-  
   							jsonFile = data;
-  							console.log(data);
-  							console.log(jsonFile);
+  							console.log(jsonFile.description)
   						})
   					}
   				}
