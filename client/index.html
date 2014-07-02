@@ -143,7 +143,7 @@
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
   						response = $.getJSON("/api/Loc/" + filename + ".json", function (data) {});
-  						jsonFile = eval(response.responseText);
+  						jsonFile = JSON.parse(response.responseText);
   						console.log(jsonFile)
   						
   					}
