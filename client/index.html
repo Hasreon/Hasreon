@@ -95,7 +95,7 @@
 
       pubnub.publish({
           channel: 'hasreon_chat',
-          message: usernm + " has joined the game"
+          message: "&lt;" + usernm + "&gt; has joined the game"
       });
       
       
@@ -118,7 +118,7 @@
       		//game logic
       	} else {
       	  msg = input.split("~");
-      		MSG = "&lt;&nbsp;" + usernm + "&gt;&nbsp;" + msg[0];
+      		MSG = msg[0];
       		chatbox.innerHTML = chatbox.innerHTML + "<br />" + MSG;
       		chatbox.scrollTop = chatbox.scrollHeight;
       	}
