@@ -110,6 +110,8 @@
       
       var MSG;
       var msg;
+      var usr;
+      var strng;
       
       function interpret(input) {
       	if(input.charAt(0) == "/") {
@@ -119,7 +121,9 @@
       	} else {
       	  msg = input.split("~");
       		MSG = msg[0];
-      		chatbox.innerHTML = chatbox.innerHTML + "<br />" + MSG;
+      		usr = msg[1];
+      		strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
+      		chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
       		chatbox.scrollTop = chatbox.scrollHeight;
       	}
       	
