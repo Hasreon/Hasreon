@@ -98,6 +98,7 @@
   		var usr;
   		var strng;
   		var jsonFile;
+  		var response;
   		var command;
   		var commandArray;
   		var commandType;
@@ -141,10 +142,10 @@
   					commandType = command.substring(0, 3);
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
-  						$.getJSON("/api/Loc/" + filename + ".json", function (data) {
-  							jsonFile = data;
-  							console.log(jsonFile.description)
-  						})
+  						response = $.getJSON("/api/Loc/" + filename + ".json", function (data) {});
+  						jsonFile = eval(response.responseText);
+  						console.log(jsonFile)
+  						
   					}
   				}
   
