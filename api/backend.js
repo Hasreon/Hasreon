@@ -18,7 +18,7 @@ function bounce(recv) {
 	if (recv.charAt(0) == "/") {
 		//if the recieved data is a command, then do the below, else ignore.
 		//Note that commands will not support additional parameters
-		if (msgArray[0] == "/init") {
+		if (msgArray[0] == "/begin") {
 			pubnub.publish({
 				channel: "hasreon_chat",
 				message: ":get('fairfalcongate')" + "~" + msgArray[1]
