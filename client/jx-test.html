@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script src="js-libs/jxs.js">
+    <script>
+      function load(){
+        jx.load('/api/Loc/fairfalconblacksmith.json',function(data){
+          console.log(data);
+      	},'json');
+      }
+    </script>
+  </head>
+  <body>
+    <a href="javascript:load();">Load</a>
+  </body>
+</html>
