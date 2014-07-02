@@ -1,7 +1,7 @@
 <html>
   <head>
     <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
-    <script src="js-libs/jxs.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/api/backend.js"></script>
     <title>Hasreon</title>
   </head>
@@ -135,10 +135,12 @@
       		      commandType = command.substring(0, 3);
       		      if(commandType == "get") {
       		        filename = command.substring(5, command.length - 2);
-      		        jx.load('/api/Loc/' + filename + ".json", function(data){
+      		        $.getJSON( "/api/Loc/" + filename + ".,json", function(data) {
+      		          
       		          jsonFile = data;
-      		          console.log(jsonFile.East);
-      		        },'json')
+      		          console.log(data);
+      		          console.log(jsonFile);
+      		        })
       		      }
       		    }
       		    
