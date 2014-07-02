@@ -2,6 +2,7 @@
   <head>
     <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
     <script src="js-libs/jxs.js"></script>
+    <script src="/api/backend.js"></script>
     <title>Hasreon</title>
   </head>
   <body>
@@ -128,6 +129,7 @@
       		console.log("Request Sent" + input)
       	} else if(input.charAt(0) == ":") {
       		    if(usr == usernm) {
+      		      console.log("Command Recieved");
       		      commandArray = MSG.split(":");
       		      command = commandArray[1];
       		      commandType = command.substring(0, 3);
