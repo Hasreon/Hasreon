@@ -6,13 +6,13 @@ var pubnub = PUBNUB.init({
 pubnub.subscribe({
 	channel: 'hasreon_chat',
 	message: function (m) {
-		interpret(m);
+		bounce(m);
 	}
 });
 
 var msgArray;
 
-function interpret(recv) {
+function bounce(recv) {
 	msgArray = recv.split("~");
 	//Separate the Username from the incoming command
 	if(recv.charAt(0) == "/") {
