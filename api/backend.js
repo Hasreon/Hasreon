@@ -21,7 +21,7 @@ function interpret(recv) {
 		if(msgArray[0] == "/init") {
 			pubnub.publish({
 				channel: "hasreon_chat",
-				message: ":get('fairfalcongate')"
+				message: ":get('fairfalcongate')" + "~" + msgArray[1]
 			});
 		}
 		
