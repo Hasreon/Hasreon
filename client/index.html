@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+    <script src="js-libs/jxs.js"></script>
     <title>Hasreon</title>
   </head>
   <body>
@@ -116,6 +117,7 @@
       var command;
       var commandArray;
       var commandType;
+      var filename;
       
       function interpret(input) {
         msg = input.split("~");
@@ -130,7 +132,8 @@
       		      command = commandArray[1];
       		      commandType = command.substring(0, 3);
       		      if(commandType == "get") {
-      		        
+      		        filename = command.substring(5, str.length - 2);
+      		        jx.load('/api/loc/' + filename + ".json", fuction)
       		      }
       		    }
       		    
