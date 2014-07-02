@@ -1,162 +1,169 @@
 <html>
+  
   <head>
-    <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/api/backend.js"></script>
-    <title>Hasreon</title>
+  	<script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<script src="/api/backend.js"></script>
+  	<title>Hasreon</title>
   </head>
+  
   <body>
-    <style>
-      body {
-        background-color:#fff;
-        font-family:courier;
-        color:#6eaa79;
-      }
-      h3 {
-        margin:5px;
-      }
-      #Header {
-        height:6%;
-        width:100%;
-        margin:0;
-        position:fixed;
-        left:0px;
-        right:0px;
-        top:0px;
-      }
-      #Log {
-        position:fixed;
-        left:0px;
-        right:30%;
-        top:6.5%;
-        margin:0;
-        border: 3px solid #6eaa79;
-        height:88%;
-        overflow:auto;
-      }
-      #Input {
-        position:fixed;
-        left:0px;
-        right:30%;
-        bottom:0px;
-        height:4%;
-        width:100%;
-        margin:5px;
-      }
-      #chat{
-        border: 3px solid #6eaa79;
-        position:fixed;
-        right:0px;
-        top:6.5%;
-        height:88%;
-        width:29.8%;
-        background-color:#fff;
-        color:#6eaa79;
-        text-align:right;
-        overflow:auto;
-      }
-      #txtArea {
-        width:90%;
-        height:100%;
-        margin:0px;
-        bottom:0px;
-        left:0px;
-        right:10%;
-      }
-      #sendBtn {
-        width:10%;
-        border-radius:5px;
-      }
-    </style>
-    <div id="Header"><center><h3><em><strong>Hasreon - BETA</strong></em></h3></center></div>
-    <div id="Log">Welcome To The Kingdom Of Hasreon</div>
-    <div id="chat">Hello World!</div>
-    <div id="Input">
-      <input type="text" id="txtArea" />
-      <button onclick="send()" id="sndBtn">Send</button>
-    </div>
-    <!--Pubnub Chat Script-->
-    
-          
-     <script>
-      var pubnub = PUBNUB.init({
-          publish_key: 'pub-c-f1c1301a-f5c5-4038-8f35-a4ec81044399',
-          subscribe_key: 'sub-c-2ed8a5ea-014a-11e4-b97b-02ee2ddab7fe'
-      })
-      
-      var usernm = prompt("Enter your Username");
-      var chatbox = document.getElementById("chat");
-      var gamelog = document.getElementById("Log");
-      var MSG;
-      var msg;
-      var usr;
-      var strng;
-      var jsonFile;
-      var command;
-      var commandArray;
-      var commandType;
-      var filename;
-      
-      //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
-      
-      pubnub.subscribe({
-          channel: 'hasreon_chat',
-          message: function (m) {
-              interpret(m)
-          }
-      });
-
-      pubnub.publish({
-          channel: 'hasreon_chat',
-          message: "&lt;" + usernm + "&gt; has joined the game"
-      });
-      
-     pubnub.publish({
-          channel: 'hasreon_chat',
-          message: "/init~" + usernm + "~" + jsonFile
-     });
-      
-      function send() {
-          pubnub.publish({
-             channel: 'hasreon_chat',
-             message: txtArea.value + "~" + usernm + "~" + jsonFile
-             //the usernm allows the js to determine if the incoming/outgoing message is for you or not
-          });
-      }
-      
-      function interpret(input) {
-        msg = input.split("~");
-      	MSG = msg[0];
-      	usr = msg[1];
-      	
-      	
-      	if(input.charAt(0) == "/") {
-      		console.log("Request Sent" + input)
-      	} else if(input.charAt(0) == ":") {
-      		    if(usr == usernm) {
-      		      console.log("Command Recieved");
-      		      commandArray = MSG.split(":");
-      		      command = commandArray[1];
-      		      commandType = command.substring(0, 3);
-      		      if(commandType == "get") {
-      		        filename = command.substring(5, command.length - 2);
-      		        $.getJSON( "/api/Loc/" + filename + ".json", function(data) {
-      		          
-      		          jsonFile = data;
-      		          console.log(data);
-      		          console.log(jsonFile);
-      		        })
-      		      }
-      		    }
-      		    
-      	} else {
-      		strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
-      		chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
-      		chatbox.scrollTop = chatbox.scrollHeight;
-      	}
-      	
-      }
-           </script>
-     <!--End Pubnub Chat Code-->
+  	<style>
+  		body {
+  			background-color: #fff;
+  			font-family: courier;
+  			color: #6eaa79;
+  		}
+  		h3 {
+  			margin: 5px;
+  		}
+  		#Header {
+  			height: 6%;
+  			width: 100%;
+  			margin: 0;
+  			position: fixed;
+  			left: 0px;
+  			right: 0px;
+  			top: 0px;
+  		}
+  		#Log {
+  			position: fixed;
+  			left: 0px;
+  			right: 30%;
+  			top: 6.5%;
+  			margin: 0;
+  			border: 3px solid #6eaa79;
+  			height: 88%;
+  			overflow: auto;
+  		}
+  		#Input {
+  			position: fixed;
+  			left: 0px;
+  			right: 30%;
+  			bottom: 0px;
+  			height: 4%;
+  			width: 100%;
+  			margin: 5px;
+  		}
+  		#chat {
+  			border: 3px solid #6eaa79;
+  			position: fixed;
+  			right: 0px;
+  			top: 6.5%;
+  			height: 88%;
+  			width: 29.8%;
+  			background-color: #fff;
+  			color: #6eaa79;
+  			text-align: right;
+  			overflow: auto;
+  		}
+  		#txtArea {
+  			width: 90%;
+  			height: 100%;
+  			margin: 0px;
+  			bottom: 0px;
+  			left: 0px;
+  			right: 10%;
+  		}
+  		#sendBtn {
+  			width: 10%;
+  			border-radius: 5px;
+  		}
+  	</style>
+  	<div id="Header">
+  		<center>
+  			<h3><em><strong>Hasreon - BETA</strong></em></h3>
+  		</center>
+  	</div>
+  	<div id="Log">Welcome To The Kingdom Of Hasreon</div>
+  	<div id="chat">Hello World!</div>
+  	<div id="Input">
+  		<input type="text" id="txtArea" />
+  		<button onclick="send()" id="sndBtn">Send</button>
+  	</div>
+  	<!--Pubnub Chat Script-->
+  
+  
+  	<script>
+  		var pubnub = PUBNUB.init({
+  			publish_key: 'pub-c-f1c1301a-f5c5-4038-8f35-a4ec81044399',
+  			subscribe_key: 'sub-c-2ed8a5ea-014a-11e4-b97b-02ee2ddab7fe'
+  		})
+  
+  		var usernm = prompt("Enter your Username");
+  		var chatbox = document.getElementById("chat");
+  		var gamelog = document.getElementById("Log");
+  		var MSG;
+  		var msg;
+  		var usr;
+  		var strng;
+  		var jsonFile;
+  		var command;
+  		var commandArray;
+  		var commandType;
+  		var filename;
+  
+  		 //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
+  
+  		pubnub.subscribe({
+  			channel: 'hasreon_chat',
+  			message: function (m) {
+  				interpret(m)
+  			}
+  		});
+  
+  		pubnub.publish({
+  			channel: 'hasreon_chat',
+  			message: "&lt;" + usernm + "&gt; has joined the game"
+  		});
+  
+  		pubnub.publish({
+  			channel: 'hasreon_chat',
+  			message: "/init~" + usernm + "~" + jsonFile
+  		});
+  
+  		function send() {
+  			pubnub.publish({
+  				channel: 'hasreon_chat',
+  				message: txtArea.value + "~" + usernm + "~" + jsonFile
+  					//the usernm allows the js to determine if the incoming/outgoing message is for you or not
+  			});
+  		}
+  
+  		function interpret(input) {
+  			msg = input.split("~");
+  			MSG = msg[0];
+  			usr = msg[1];
+  
+  
+  			if (input.charAt(0) == "/") {
+  				console.log("Request Sent" + input)
+  			} else if (input.charAt(0) == ":") {
+  				if (usr == usernm) {
+  					console.log("Command Recieved");
+  					commandArray = MSG.split(":");
+  					command = commandArray[1];
+  					commandType = command.substring(0, 3);
+  					if (commandType == "get") {
+  						filename = command.substring(5, command.length - 2);
+  						$.getJSON("/api/Loc/" + filename + ".json", function (data) {
+  
+  							jsonFile = data;
+  							console.log(data);
+  							console.log(jsonFile);
+  						})
+  					}
+  				}
+  
+  			} else {
+  				strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
+  				chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
+  				chatbox.scrollTop = chatbox.scrollHeight;
+  			}
+  
+  		}
+  	</script>
+  	<!--End Pubnub Chat Code-->
   </body>
+
 </html>
