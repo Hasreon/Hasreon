@@ -83,9 +83,20 @@
           publish_key: 'pub-c-f1c1301a-f5c5-4038-8f35-a4ec81044399',
           subscribe_key: 'sub-c-2ed8a5ea-014a-11e4-b97b-02ee2ddab7fe'
       })
+      
       var usernm = prompt("Enter your Username");
       var chatbox = document.getElementById("chat");
       var gamelog = document.getElementById("Log");
+      var MSG;
+      var msg;
+      var usr;
+      var strng;
+      var jsonFile;
+      var command;
+      var commandArray;
+      var commandType;
+      var filename;
+      
       //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
       
       pubnub.subscribe({
@@ -100,30 +111,24 @@
           message: "&lt;" + usernm + "&gt; has joined the game"
       });
       
-      
+     pubnub.publish({
+          channel: 'hasreon_chat',
+          message: "/init~" + usernm + "~" + jsonFile
+     });
       
       function send() {
           pubnub.publish({
              channel: 'hasreon_chat',
-             message: txtArea.value + "~" + usernm
+             message: txtArea.value + "~" + usernm + "~" + jsonFile
              //the usernm allows the js to determine if the incoming/outgoing message is for you or not
           });
       }
-      
-      var MSG;
-      var msg;
-      var usr;
-      var strng;
-      var jsonFile;
-      var command;
-      var commandArray;
-      var commandType;
-      var filename;
       
       function interpret(input) {
         msg = input.split("~");
       	MSG = msg[0];
       	usr = msg[1];
+      	
       	
       	if(input.charAt(0) == "/") {
       		console.log("Request Sent" + input)
