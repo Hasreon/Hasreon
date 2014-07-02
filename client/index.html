@@ -112,16 +112,29 @@
       var msg;
       var usr;
       var strng;
+      var jsonFile;
+      var command;
+      var commandArray;
+      var commandType;
       
       function interpret(input) {
+        msg = input.split("~");
+      	MSG = msg[0];
+      	usr = msg[1];
+      	
       	if(input.charAt(0) == "/") {
       		console.log("Request Sent" + input)
       	} else if(input.charAt(0) == ":") {
-      		//game logic
+      		    if(usr == usernm) {
+      		      commandArray = MSG.split(":");
+      		      command = commandArray[1];
+      		      commandType = command.substring(0, 3);
+      		      if(commandType == "get") {
+      		        
+      		      }
+      		    }
+      		    
       	} else {
-      	  msg = input.split("~");
-      		MSG = msg[0];
-      		usr = msg[1];
       		strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
       		chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
       		chatbox.scrollTop = chatbox.scrollHeight;
