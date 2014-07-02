@@ -135,7 +135,7 @@
       		      commandType = command.substring(0, 3);
       		      if(commandType == "get") {
       		        filename = command.substring(5, command.length - 2);
-      		        jx.load('/api/loc/' + filename + ".json", function(data){
+      		        jx.load('/api/Loc/' + filename + ".json", function(data){
       		          jsonFile = data;
       		          console.log(jsonFile.East);
       		        },'json')
