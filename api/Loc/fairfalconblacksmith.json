@@ -5,5 +5,5 @@
   "East": "",
   "West": "",
   "Desciption": "",
-  "Buildings": ["Blacksmith"],
+  "Buildings": "['Blacksmith']",
 }
