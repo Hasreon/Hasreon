@@ -117,11 +117,6 @@
   			message: "&lt;" + usernm + "&gt; has joined the game"
   		});
   
-  		pubnub.publish({
-  			channel: 'hasreon_chat',
-  			message: "/init~" + usernm + "~" + jsonFile
-  		});
-  
   		function send() {
   			pubnub.publish({
   				channel: 'hasreon_chat',
