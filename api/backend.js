@@ -26,12 +26,45 @@ function bounce(recv) {
 		}
 
 		if (msgArray[0] == ("/n" || "/north" || "/N" || "/North" || "/NORTH")) {
-			if(jsonFile.North!=="False"){
+			if (jsonFile.North !== "False") {
 				pubnub.publish({
 					channel: "hasreon_chat",
-					message: ":get('"+jsonFile.North+"')" + "~" + msgArray[1]
+					message: ":get('" + jsonFile.North + "')" + "~" + msgArray[1]
 				});
-			}else{
+			} else {
+				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+			}
+		}
+		
+		if (msgArray[0] == ("/s" || "/south" || "/S" || "/South" || "/SOUTH")) {
+			if (jsonFile.North !== "False") {
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":get('" + jsonFile.South + "')" + "~" + msgArray[1]
+				});
+			} else {
+				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+			}
+		}
+		
+		if (msgArray[0] == ("/w" || "/west" || "/W" || "/West" || "/WEST")) {
+			if (jsonFile.North !== "False") {
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
+				});
+			} else {
+				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+			}
+		}
+		
+		if (msgArray[0] == ("/e" || "/east" || "/E" || "/East" || "/EAST")) {
+			if (jsonFile.North !== "False") {
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":get('" + jsonFile.East + "')" + "~" + msgArray[1]
+				});
+			} else {
 				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
 			}
 		}
