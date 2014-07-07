@@ -25,7 +25,7 @@ function bounce(recv) {
 			});
 		}
 
-		if (msgArray[0] == "/n" || "/north" || "/N" || "/North" || "/NORTH") {
+		if (msgArray[0] == ("/n" || "/north" || "/N" || "/North" || "/NORTH")) {
 			if(jsonFile.North!=="False"){
 				pubnub.publish({
 					channel: "hasreon_chat",
