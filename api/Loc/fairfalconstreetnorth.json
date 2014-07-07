@@ -1,9 +1,9 @@
 {
   "name": "Street to the North",
-  "North": False,
+  "North": "False",
   "South": "fairfalconmainstreet",
-  "East": False,
-  "West": False,
+  "East": "False",
+  "West": "False",
   "Decription": "You step into a Quiet Residential Street. There is nothing of use here. The Main Street is to the south.",
-  "Buildings": [],
+  "Buildings": "[]",
 }
