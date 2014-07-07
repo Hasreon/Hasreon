@@ -85,90 +85,92 @@
   
   
   	<script>
-  		var pubnub = PUBNUB.init({
-  			publish_key: 'pub-c-f1c1301a-f5c5-4038-8f35-a4ec81044399',
-  			subscribe_key: 'sub-c-2ed8a5ea-014a-11e4-b97b-02ee2ddab7fe'
-  		})
-  
-  		var usernm = prompt("Enter your Username");
-  		var chatbox = document.getElementById("chat");
-  		var gamelog = document.getElementById("Log");
-  		var MSG;
-  		var msg;
-  		var usr;
-  		var strng;
-  		var jsonFile;
-  		var response;
-  		var command;
-  		var commandArray;
-  		var commandType;
-  		var filename;
-  
-  		 //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
-  
-  		pubnub.subscribe({
-  			channel: 'hasreon_chat',
-  			message: function (m) {
-  				interpret(m);
-  			}
-  		});
-  
-  		pubnub.publish({
-  			channel: 'hasreon_chat',
-  			message: "&lt;" + usernm + "&gt; has joined the game"
-  		});
-  
-  		function send() {
-  			pubnub.publish({
-  				channel: 'hasreon_chat',
-  				message: txtArea.value + "~" + usernm + "~" + jsonFile
-  					//the usernm allows the js to determine if the incoming/outgoing message is for you or not
-  			});
-  		}
-  
-  		function interpret(input) {
-  			msg = input.split("~");
-  			MSG = msg[0];
-  			usr = msg[1];
-  
-  
-  			if (input.charAt(0) == "/") {
-  				console.log("Request Sent" + input);
-  			} else if (input.charAt(0) == ":") {
-  				if (usr == usernm) {
-  					console.log("Command Recieved");
-  					console.log("Input: " + input);
-  					commandArray = MSG.split(":");
-  					console.log("Command Array: " + commandArray);
-  					command = commandArray[1];
-  					console.log("Command: " + command);
-  					commandType = command.substring(0, 3);
-  					console.log("Command Type: " + commandType);
-  					if (commandType == "get") {
-  						filename = command.substring(5, command.length - 2);
-  						console.log("File Name:" + filename);
-  						$.getJSON("/api/Loc/" + filename + ".json", function (data) {response = data; return response;});
-  						console.log("Response: " + response);
-  						jsonFile = response;
-  						console.log("JSON File: " + jsonFile);
-  						
-  						gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.description;
-  					}
-  				}
-  
-  			} else {
-  				strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
-  				chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
-  				chatbox.scrollTop = chatbox.scrollHeight;
-  			}
-  
-  		}
-  		
-  		function init() {
-  		  gamelog.innerHTML = "<center><h1>Welcome, Traveller " + usernm + "</h1><br /><h3>To the Kingdom of Hasreon. Type /begin to commence your adventure.</h3></center>"
-  		}
-  		  
-  		setTimeout(init,1000);
+      var pubnub = PUBNUB.init({
+      	publish_key: 'pub-c-f1c1301a-f5c5-4038-8f35-a4ec81044399',
+      	subscribe_key: 'sub-c-2ed8a5ea-014a-11e4-b97b-02ee2ddab7fe'
+      })
+      
+      var usernm = prompt("Enter your Username");
+      var chatbox = document.getElementById("chat");
+      var gamelog = document.getElementById("Log");
+      var MSG;
+      var msg;
+      var usr;
+      var strng;
+      var jsonFile;
+      var response;
+      var command;
+      var commandArray;
+      var commandType;
+      var filename;
+      
+      //Sent Game Requests are prefixed with slash (/), chat is not prefixed, and recieved game data is prefixed with with a colon(:) 
+      
+      pubnub.subscribe({
+      	channel: 'hasreon_chat',
+      	message: function (m) {
+      		interpret(m);
+      	}
+      });
+      
+      pubnub.publish({
+      	channel: 'hasreon_chat',
+      	message: "&lt;" + usernm + "&gt; has joined the game"
+      });
+      
+      function send() {
+      	pubnub.publish({
+      		channel: 'hasreon_chat',
+      		message: txtArea.value + "~" + usernm + "~" + jsonFile
+      			//the usernm allows the js to determine if the incoming/outgoing message is for you or not
+      	});
+      }
+      
+      function interpret(input) {
+      	msg = input.split("~");
+      	MSG = msg[0];
+      	usr = msg[1];
+      
+      
+      	if (input.charAt(0) == "/") {
+      		console.log("Request Sent" + input);
+      	} else if (input.charAt(0) == ":") {
+      		if (usr == usernm) {
+      			console.log("Command Recieved");
+      			console.log("Input: " + input);
+      			commandArray = MSG.split(":");
+      			console.log("Command Array: " + commandArray);
+      			command = commandArray[1];
+      			console.log("Command: " + command);
+      			commandType = command.substring(0, 3);
+      			console.log("Command Type: " + commandType);
+      			if (commandType == "get") {
+      				filename = command.substring(5, command.length - 2);
+      				console.log("File Name:" + filename);
+      				$.getJSON("/api/Loc/" + filename + ".json", function (data) {
+      					response = data;
+      				});
+      				console.log("Response: " + response);
+      				jsonFile = response;
+      				console.log("JSON File: " + jsonFile);
+      
+      				gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.description;
+      			}
+      		}
+      
+      	} else {
+      		strng = "&lt;" + usr + "&gt;&nbsp;" + MSG;
+      		chatbox.innerHTML = chatbox.innerHTML + "<br />" + strng;
+      		chatbox.scrollTop = chatbox.scrollHeight;
+      	}
+      
+      }
+      
+      function init() {
+      	gamelog.innerHTML = "<center><h1>Welcome, Traveller " + usernm + "</h1><br /><h3>To the Kingdom of Hasreon. Type /begin to commence your adventure.</h3></center>"
+      }
+      
+      setTimeout(init, 1000);
   	</script>
   	<!--End Pubnub Chat Code-->
   </body>
