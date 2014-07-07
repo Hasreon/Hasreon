@@ -32,7 +32,7 @@ function bounce(recv) {
 					message: ":get('" + jsonFile.North + "')" + "~" + msgArray[1]
 				});
 			} else {
-				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
 		
@@ -43,7 +43,7 @@ function bounce(recv) {
 					message: ":get('" + jsonFile.South + "')" + "~" + msgArray[1]
 				});
 			} else {
-				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
 		
@@ -54,7 +54,7 @@ function bounce(recv) {
 					message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
 				});
 			} else {
-				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
 		
@@ -65,7 +65,7 @@ function bounce(recv) {
 					message: ":get('" + jsonFile.East + "')" + "~" + msgArray[1]
 				});
 			} else {
-				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
 	}
