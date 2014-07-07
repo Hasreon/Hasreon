@@ -26,10 +26,14 @@ function bounce(recv) {
 		}
 
 		if (msgArray[0] == "/n" || "/north" || "/N" || "/North" || "/NORTH") {
-			pubnub.publish({
-				channel: "hasreon_chat",
-				message: ":get('"+jsonFile.North+"')" + "~" + msgArray[1]
-			});
+			if(jsonFile.North!=="False"){
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":get('"+jsonFile.North+"')" + "~" + msgArray[1]
+				});
+			}else{
+				gamelog.innerHTML = gamelog.innerHTML + "<br /> <br /> <center><h2>You can't go that way</h2></center>";
+			}
 		}
 	}
 }
