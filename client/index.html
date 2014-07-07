@@ -149,7 +149,7 @@
   						console.log("File Name:" + filename)
   						$.getJSON("/api/Loc/" + filename + ".json", function (data) {response = data;});
   						console.log("Response: " + response)
-  						jsonFile = response.responseJSON
+  						jsonFile = response
   						console.log("JSON File: " + jsonFile)
   						
   					}
