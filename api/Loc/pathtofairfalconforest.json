@@ -1,9 +1,9 @@
 {
   "name": "Path to Fairfalcon Forest",
-  "North": False,
+  "North": "False",
   "South": "fairfalconforestentrance",
-  "East": False,
+  "East": "False",
   "West": "pathtofairfalcon",
-  "Description": "you wind yourself on a long and widing path into the forest. The forest is to the south.",
-  "Buildings": [],
+  "Description": "You find yourself on a long and widing path into the forest. The forest is to the south.",
+  "Buildings": "[]",
 }
