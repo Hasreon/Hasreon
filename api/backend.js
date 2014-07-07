@@ -26,7 +26,10 @@ function bounce(recv) {
 		}
 
 		if (msgArray[0] == "/n" || "/north" || "/N" || "/North" || "/NORTH") {
-
+			pubnub.publish({
+				channel: "hasreon_chat",
+				message: ":get('"+jsonFile.North+"')" + "~" + msgArray[1]
+			});
 		}
 	}
 }
