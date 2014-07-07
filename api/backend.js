@@ -37,7 +37,7 @@ function bounce(recv) {
 		}
 		
 		if (msgArray[0] == ("/s" || "/south" || "/S" || "/South" || "/SOUTH")) {
-			if (jsonFile.North !== "False") {
+			if (jsonFile.South !== "False") {
 				pubnub.publish({
 					channel: "hasreon_chat",
 					message: ":get('" + jsonFile.South + "')" + "~" + msgArray[1]
@@ -48,7 +48,7 @@ function bounce(recv) {
 		}
 		
 		if (msgArray[0] == ("/w" || "/west" || "/W" || "/West" || "/WEST")) {
-			if (jsonFile.North !== "False") {
+			if (jsonFile.West !== "False") {
 				pubnub.publish({
 					channel: "hasreon_chat",
 					message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
@@ -59,7 +59,7 @@ function bounce(recv) {
 		}
 		
 		if (msgArray[0] == ("/e" || "/east" || "/E" || "/East" || "/EAST")) {
-			if (jsonFile.North !== "False") {
+			if (jsonFile.West !== "False") {
 				pubnub.publish({
 					channel: "hasreon_chat",
 					message: ":get('" + jsonFile.East + "')" + "~" + msgArray[1]
