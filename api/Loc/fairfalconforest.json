@@ -1,9 +1,9 @@
 {
   "name": "Fairfalcon Forest",
   "North": "pathtofairfalconforest",
-  "South": False,
-  "East": False,
+  "South": "False",
+  "East": "False",
   "West": "caveentrance",
   "Description": "You find yourself in a dense, overgrown forest. The grass is up to your knees and the trees obscure almost all light, However, you can make out a boulder on the west side. It is covered in vines and looks like it has been there for a long time.",
-  "Buildings": "Boulder",
+  "Buildings": "['Boulder']",
 }
