@@ -34,7 +34,9 @@
   			margin: 0;
   			border: 3px solid #6eaa79;
   			height: 88%;
-  			overflow: auto;
+  			overflow: scroll;
+  			padding:10px;
+  			
   		}
   		#Input {
   			position: fixed;
@@ -154,6 +156,7 @@
       			  	console.log("JSON File: " + jsonFile);
       
       				  gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.Description;
+      				  gamelog.scrollTop = gamelog.scrollHeight;
       				});
       			}
       		}
