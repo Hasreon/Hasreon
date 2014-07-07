@@ -109,7 +109,7 @@
   		pubnub.subscribe({
   			channel: 'hasreon_chat',
   			message: function (m) {
-  				interpret(m)
+  				interpret(m);
   			}
   		});
   
@@ -133,24 +133,24 @@
   
   
   			if (input.charAt(0) == "/") {
-  				console.log("Request Sent" + input)
+  				console.log("Request Sent" + input);
   			} else if (input.charAt(0) == ":") {
   				if (usr == usernm) {
   					console.log("Command Recieved");
-  					console.log("Input: " + input)
+  					console.log("Input: " + input);
   					commandArray = MSG.split(":");
-  					console.log("Command Array: " + commandArray)
+  					console.log("Command Array: " + commandArray);
   					command = commandArray[1];
-  					console.log("Command: " + command)
+  					console.log("Command: " + command);
   					commandType = command.substring(0, 3);
-  					console.log("Command Type: " + commandType)
+  					console.log("Command Type: " + commandType);
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
-  						console.log("File Name:" + filename)
+  						console.log("File Name:" + filename);
   						$.getJSON("/api/Loc/" + filename + ".json", function (data) {response = data; return response;});
-  						console.log("Response: " + response)
-  						jsonFile = response
-  						console.log("JSON File: " + jsonFile)
+  						console.log("Response: " + response);
+  						jsonFile = response;
+  						console.log("JSON File: " + jsonFile);
   						
   						gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.description;
   					}
