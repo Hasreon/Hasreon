@@ -1,9 +1,9 @@
 {
   "name": "Path to Fairfalcon",
-  "North": False,
+  "North": "False",
   "South": "pathtofairfalconforest",
-  "East": False,
+  "East": "False",
   "West": "fairfalcongate",
   "Description": "You find yourself on a long, narrow, twisting path. The Village of Fairfalcon is to the west. a oathis to the south",
-  "": "",
+  "Buildings": "[]",
 }
