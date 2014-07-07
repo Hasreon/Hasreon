@@ -137,14 +137,20 @@
   			} else if (input.charAt(0) == ":") {
   				if (usr == usernm) {
   					console.log("Command Recieved");
+  					console.log("Input: " + input)
   					commandArray = MSG.split(":");
+  					console.log("Command Array: " + commandArray)
   					command = commandArray[1];
+  					console.log("Command: " + command)
   					commandType = command.substring(0, 3);
+  					console.log("Command Type: " + commandType)
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
+  						console.log("File Name:" + filename)
   						response = $.getJSON("/api/Loc/" + filename + ".json", function (data) {});
+  						console.log("Response: " + response)
   						jsonFile = response.responseJSON
-  						console.log(jsonFile)
+  						console.log("JSON File: " + jsonFile)
   						
   					}
   				}
