@@ -147,7 +147,7 @@
   					if (commandType == "get") {
   						filename = command.substring(5, command.length - 2);
   						console.log("File Name:" + filename)
-  						response = $.getJSON("/api/Loc/" + filename + ".json", function (data) {});
+  						$.getJSON("/api/Loc/" + filename + ".json", function (data) {response = data;});
   						console.log("Response: " + response)
   						jsonFile = response.responseJSON
   						console.log("JSON File: " + jsonFile)
