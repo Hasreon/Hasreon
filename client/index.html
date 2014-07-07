@@ -152,6 +152,7 @@
   						jsonFile = response
   						console.log("JSON File: " + jsonFile)
   						
+  						gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.description;
   					}
   				}
   
