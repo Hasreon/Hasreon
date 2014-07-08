@@ -59,7 +59,7 @@ function bounce(recv) {
 		}
 		
 		if (msgArray[0] == ("/e" || "/east" || "/E" || "/East" || "/EAST")) {
-			if (jsonFile.West !== "False") {
+			if (jsonFile.East !== "False") {
 				pubnub.publish({
 					channel: "hasreon_chat",
 					message: ":get('" + jsonFile.East + "')" + "~" + msgArray[1]
