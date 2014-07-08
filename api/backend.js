@@ -68,5 +68,9 @@ function bounce(recv) {
 				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
+		
+		if (msgArray[0] == "/look") {
+			gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
+		}
 	}
 }
