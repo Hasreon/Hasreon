@@ -68,9 +68,14 @@ function bounce(recv) {
 				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
 		}
-		
+		var msg3;
 		if (msgArray[0] == "/look") {
-			gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
+			msg3="";
+			if(jsonFile.East!=="False"){msg3+="East is:" + jsonFile.East + "<br />";}
+			if(jsonFile.West!=="False"){msg3+="West is:" + jsonFile.West + "<br />";}
+			if(jsonFile.North!=="False"){msg3+="North is:" + jsonFile.North + "<br />";}
+			if(jsonFile.South!=="False"){msg3+="South is:" + jsonFile.South + "<br />";}
+			gamelog.innerHTML = gamelog.innerHTML + msg3;
 		}
 	}
 }
