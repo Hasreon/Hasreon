@@ -24,7 +24,7 @@ var fairfalconstreetnorth = {
   South: "fairfalconmainstreet",
   East: "False",
   West: "False",
-  Decription: "You step into a Quiet Residential Street. There is nothing of use here. The Main Street is to the south.",
+  Description: "You step into a Quiet Residential Street. There is nothing of use here. The Main Street is to the south.",
   Buildings: []
 };
 
