@@ -71,10 +71,11 @@ function bounce(recv) {
 		var msg3;
 		if (msgArray[0] == "/look") {
 			msg3="";
-			if(jsonFile.East!=="False"){msg3+="East is:" + jsonFile.East + "<br />";}
-			if(jsonFile.West!=="False"){msg3+="West is:" + jsonFile.West + "<br />";}
+			if(jsonFile.Buildings!==[]){msg3+="Nearby buildings:" + jsonFile.Buildings + "<br />";}
 			if(jsonFile.North!=="False"){msg3+="North is:" + jsonFile.North + "<br />";}
+			if(jsonFile.East!=="False"){msg3+="East is:" + jsonFile.East + "<br />";}
 			if(jsonFile.South!=="False"){msg3+="South is:" + jsonFile.South + "<br />";}
+			if(jsonFile.West!=="False"){msg3+="West is:" + jsonFile.West + "<br />";}
 			gamelog.innerHTML = gamelog.innerHTML + msg3;
 		}
 	}
