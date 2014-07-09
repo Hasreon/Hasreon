@@ -94,7 +94,7 @@ function bounce(recv) {
 		if (msgArray[0] == "/Boulder" && msgArray[2] == eval("fairfalconforest") && sword && mayor && !boulder) {
 			gamelog.innerHTML = gamelog.innerHTML + "The Boulder Moved!";
 			boulder = true;
-		} else if (msgArray[2] !== eval("fairfalconforest")) {
+		} else if (msgArray[0] == "/Boulder" && msgArray[2] !== eval("fairfalconforest")) {
 			gamelog.innerHTML = gamelog.innerHTML + "There is no Boulder Here...";
 		} else if (msgArray[2] == eval("fairfalconforest") && (!sword || !mayor)) {
 			gamelog.innerHTML = gamelog.innerHTML + "You are not ready...";
@@ -126,7 +126,7 @@ function bounce(recv) {
 		if (msgArray[0] == "/kraken" && msgArray[2] == eval("cave")) {
 			console.log("RELEASE THE KRAKEN!")
 				//Fighting logic
-		} else {
+		} else if (msgArray[0] == "/kraken" && msgArray[2] !== eval("cave")) {
 			gamelog.innerHTML = gamelog.innerHTML + "You can't do that."
 		}
 	}
