@@ -118,7 +118,7 @@ function bounce(recv) {
 			gamelog.innerHTML = gamelog.innerHTML + "<br /> Oh its you. I've heard many things about you. Please, have a seat. <br /> You sit down. <br /> I have a problem. In the forest there is a tpye of sea-dwelling monster called a Kraken, and it has created an abode in an Ancient Cave. It is tunnelling under the city and is causing many buildings to collapse. Will you subdue it for me? I'll make it worth your while.<br /> You nod. </br>Excellent. I've arranged for you to get a sword. Go see the Blacksmith<br />";
 			mayor = true
 		} else if (msgArray[0] == "/mayor" && msgArray[2] == eval("fairfalcontownhall") && mayor) {
-			gamelog.innerHTML = gamelog.innerHTML + "What are you waiting for? Go see the blacksmith. He'll tell you the rest.<br />".
+			gamelog.innerHTML = gamelog.innerHTML + "What are you waiting for? Go see the blacksmith. He'll tell you the rest.<br />";
 		} else if (msgArray[0] == "/mayor" && msgArray[2] !== eval("fairfalcontownhall")) {
 			gamelog.innerHTML = gamelog.innerHTML + "The mayor is not here..."
 		}
