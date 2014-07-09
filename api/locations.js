@@ -54,7 +54,7 @@ var fairfalconblacksmith = {
   South: "False",
   East: "fairfalconmainstreet",
   West: "False",
-  Desciption: "The Blacksmith is out. You can see a single customer sitting on a bench, next to some form of metal beam that looks like it has just been cast",
+  Description: "The Blacksmith is out. You can see a single customer sitting on a bench, next to some form of metal beam that looks like it has just been cast",
   Buildings: ['Blacksmith']
 }
 
