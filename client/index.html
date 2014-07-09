@@ -151,15 +151,11 @@
       			if (commandType == "get") {
       				filename = command.substring(5, command.length - 2);
       				console.log("File Name:" + filename);
-      				$.getJSON("/api/Loc/" + filename + ".json", function (data) {
-      					response = data;
-      					console.log("Response: " + response);
-      		  		jsonFile = response;
-      			  	console.log("JSON File: " + jsonFile);
-      
-      				  gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.Description;
-      				  gamelog.scrollTop = gamelog.scrollHeight;
-      				});
+      				jsonFile = eval(filename);
+      			  console.log("JSON File: " + jsonFile);
+      			  gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", are at the " + jsonFile.name + "</h3><br /><br />" + jsonFile.Description;
+      			  gamelog.scrollTop = gamelog.scrollHeight;
+
       			}
       		}
       
