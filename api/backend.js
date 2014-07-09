@@ -70,12 +70,12 @@ function bounce(recv) {
 		}
 		var msg3;
 		if (msgArray[0] == "/look") {
-			msg3="";
+			msg3="<br /> ";
 			if(jsonFile.Buildings!==[]){msg3+="Nearby buildings:" + jsonFile.Buildings + "<br />";}
-			if(jsonFile.North!=="False"){msg3+="North is:" + jsonFile.North + "<br />";}
-			if(jsonFile.East!=="False"){msg3+="East is:" + jsonFile.East + "<br />";}
-			if(jsonFile.South!=="False"){msg3+="South is:" + jsonFile.South + "<br />";}
-			if(jsonFile.West!=="False"){msg3+="West is:" + jsonFile.West + "<br />";}
+			if(jsonFile.North!=="False"){msg3+="North is: " + eval(jsonFile.North).name + "<br />";}
+			if(jsonFile.East!=="False"){msg3+="East is: " + eval(jsonFile.East).name + "<br />";}
+			if(jsonFile.South!=="False"){msg3+="South is: " + eval(jsonFile.South).name + "<br />";}
+			if(jsonFile.West!=="False"){msg3+="West is: " + eval(jsonFile.West).name + "<br />";}
 			gamelog.innerHTML = gamelog.innerHTML + msg3;
 		}
 	}
