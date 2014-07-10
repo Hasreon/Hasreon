@@ -94,7 +94,7 @@ var pathtofairfalconforest = {
   South: "fairfalconforest",
   East: "False",
   West: "pathtofairfalcon",
-  Description: "You find yourself on a long and widing path into the forest. The forest is to the south.",
+  Description: "You find yourself on a long and winding path into the forest. The forest is to the south.",
   Buildings: []
 }
 
