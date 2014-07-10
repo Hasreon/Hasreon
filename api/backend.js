@@ -14,6 +14,8 @@ var msgArray;
 var boulder = false;
 var mayor = false;
 var sword = false;
+var miss;
+var kmiss;
 
 function bounce(recv) {
 	msgArray = recv.split("~");
@@ -140,7 +142,35 @@ function bounce(recv) {
 
 		if (msgArray[0] == "/kraken" && jsonFile == eval("cave")) {
 			console.log("RELEASE THE KRAKEN!")
-				//Fighting logic
+			gamelog.innerHTML = gamelog.innerHTML + "You attack the Kraken!"
+			miss = Math.floor((Math.random() * 5) + 1);
+			kmiss = Math.floor((Math.random() * 5) + 1);
+			dmg = Math.floor((Math.random() * 15) + 1);
+			kdmg = Math.floor((Math.random() * 5) + 1);
+			if (miss !== "5"){
+				khp = khp - dmg;
+				if(khp < 1) {
+					pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":win()" + "~" + msgArray[1]
+				});
+				}
+			} else {
+				gamelog.innerHTML = gamelog.innerHTML + "You missed!"
+			};
+			if (kmiss !== "5"){
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":hit('" + kdmg + "')" + "~" + msgArray[1]
+				});
+			} else {
+				gamelog.innerHTML = gamelog.innerHTML + "The  kraken missed!"
+				pubnub.publish({
+					channel: "hasreon_chat",
+					message: ":hit('0')" + "~" + msgArray[1]
+				});
+			};
+			
 		} else if (msgArray[0] == "/kraken" && jsonFile !== eval("cave")) {
 			gamelog.innerHTML = gamelog.innerHTML + "You can't do that."
 		}
