@@ -157,6 +157,17 @@
       			  gamelog.scrollTop = gamelog.scrollHeight;
 
       			}
+      			if (commandType == "hit") {
+      			  damage = parseInt(command.substring(5, command.length - 2),0);
+      			  hp = hp - damage;
+      			  gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", Took " + damage + "HP of damage!. You have " + HP + "HP Left. The kraken has " +khp+ "HP left!</h3><br /><br />";
+      			  gamelog.scrollTop = gamelog.scrollHeight;
+      			}
+      			
+      			if (commandType == "win") {
+      			  gamelog.innerHTML = gamelog.innerHTML + "<br /><br /><h3> You, Traveller " + usernm + ", have won the game!</h3><br /><br />";
+      			  gamelog.scrollTop = gamelog.scrollHeight;
+      			}
       		}
       
       	} else {
