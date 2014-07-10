@@ -174,5 +174,23 @@ function bounce(recv) {
 		} else if (msgArray[0] == "/kraken" && jsonFile !== eval("cave")) {
 			gamelog.innerHTML = gamelog.innerHTML + "You can't do that."
 		}
+		
+		if (msgArray[0] == "/enter townhall" && jsonFile == eval("fairfalconmainstreet")) {
+			pubnub.publish({
+						channel: "hasreon_chat",
+						message: ":get('" + fairfalcontownhall + "')" + "~" + msgArray[1]
+			});
+		} else {
+				gamelog.innerHTML = gamelog.innerHTML + "You can't do that."
+		}
+		
+		if (msgArray[0] == "/enter blacksmiths" && jsonFile == eval("fairfalconmainstreet")) {
+			pubnub.publish({
+						channel: "hasreon_chat",
+						message: ":get('" + fairfalconblacksmith + "')" + "~" + msgArray[1]
+			});
+		} else {
+				gamelog.innerHTML = gamelog.innerHTML + "You can't do that."
+		}
 	}
 }
