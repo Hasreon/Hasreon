@@ -51,14 +51,29 @@ function bounce(recv) {
 		}
 
 		if (msgArray[0] == ("/w" || "/west" || "/W" || "/West" || "/WEST")) {
-			if (jsonFile.West !== "False") {
-				pubnub.publish({
-					channel: "hasreon_chat",
-					message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
-				});
+			if(jsonFile !== eval("fairfalconforest")) {
+				if (jsonFile.West !== "False") {
+					pubnub.publish({
+						channel: "hasreon_chat",
+						message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
+					});
+				} else {
+					gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
+				}
+			
+			} else if(jsonFile == eval("fairfalconforest") && boulder) {
+				if (jsonFile.West !== "False") {
+					pubnub.publish({
+						channel: "hasreon_chat",
+						message: ":get('" + jsonFile.West + "')" + "~" + msgArray[1]
+					});
+				} else {
+					gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
+				}
 			} else {
-				gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
+					gamelog.innerHTML = gamelog.innerHTML + "<center><h3>You can't go that way</h3></center>";
 			}
+			
 		}
 
 		if (msgArray[0] == ("/e" || "/east" || "/E" || "/East" || "/EAST")) {
